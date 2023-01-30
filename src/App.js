@@ -1,4 +1,5 @@
 import "./App.css";
+import Botones from "./Cmponentes/Botones";
 import Tablero from "./Cmponentes/Tablero";
 
 function App() {
@@ -9,6 +10,10 @@ function App() {
         <Tablero />
         <Tablero />
       </div>
+      {/* <div>
+        <Botones />
+      </div> */}
+      
     </>
   );
 }

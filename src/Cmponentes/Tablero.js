@@ -1,8 +1,8 @@
-import React from 'react'
-import Botones from './Botones';
+import React, { useState } from "react";
+import Botones from "./Botones";
 
 const Tablero = () => {
-    let gameBoard = [
+  let gameBoard = [
     [1, 1, 1, 1, 1, 0, 0, 0, 0, 1],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
@@ -14,6 +14,9 @@ const Tablero = () => {
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [1, 1, 1, 1, 0, 0, 0, 0, 0, 0],
   ];
+
+  const [elegir, setElegir] = useState("");
+
   return (
     <>
       <div className="tablero">
@@ -22,21 +25,27 @@ const Tablero = () => {
             <div key={i}>
               {fila.map((casilla, j) => {
                 return (
-                  <button className="casilla" key={j}>
-                    {casilla}
-                  </button>
+                  <div
+                    className="casilla"
+                    style={{ background: elegir }}
+                    key={j}
+                    onClick={() => {
+                      setElegir("red");
+                    }}
+                  >
+                    {casilla} 
+                  </div>
                 );
               })}
             </div>
           );
         })}
-      </div>
+      </div> 
+
+      
       <Botones />
     </>
   );
-}
+};
 
-export default Tablero
-
-
-  
+export default Tablero;
