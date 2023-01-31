@@ -1,49 +1,59 @@
 import React, { useState } from "react";
-import Botones from "./Botones";
+//import Botones from "./Botones";
 
 const Tablero = () => {
-  let gameBoard = [
-    [1, 1, 1, 1, 1, 0, 0, 0, 0, 1],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [1, 0, 0, 1, 1, 0, 0, 0, 0, 0],
-    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [1, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+  let gameBoardMostrar = [
+    ["B", "", "", "", "", "", "", "", "", ""],
+    ["B", "", "", "", "", "", "", "", "", ""],
+    ["B", "", "", "", "", "", "", "B", "", ""],
+    ["", "", "", "", "", "", "", "B", "", ""],
+    ["", "", "", "", "", "", "", "B", "", ""],
+    ["", "", "", "", "", "", "", "", "", ""],
+    ["", "", "", "B", "B", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", "", "", ""],
   ];
 
-  const [elegir, setElegir] = useState("");
+  //console.log(gameBoard[0][1]);
+  //const [color, setColor] = useState("");
 
   return (
     <>
       <div className="tablero">
-        {gameBoard.map((fila, i) => {
+        {gameBoardMostrar.map((arr, i) => {
           return (
             <div key={i}>
-              {fila.map((casilla, j) => {
+              {arr.map((fila, j) => {
                 return (
-                  <div
-                    className="casilla"
-                    style={{ background: elegir }}
-                    key={j}
-                    onClick={() => {
-                      setElegir("red");
-                    }}
-                  >
-                    {casilla} 
+                  <div key={j}>
+                    <div
+                      id={fila}
+                      className="elemento"
+                      //style={{ background: elegir }}
+
+                      onClick={(e) => {
+                        if (fila === "") {
+                          e.target.style.background = "white";
+                          console.log(fila);
+                        } else {
+                          e.target.style.background = "red";
+                          console.log(fila);
+                        }
+                      }}
+                    >
+                      {fila}
+                    </div>
                   </div>
                 );
               })}
             </div>
           );
         })}
-      </div> 
-
-      
-      <Botones />
+      </div>
+      <div className="botones">
+        <button className="btn">Mostrar barcos</button>
+      </div>
     </>
   );
 };

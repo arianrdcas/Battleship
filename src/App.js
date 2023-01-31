@@ -1,8 +1,10 @@
 import "./App.css";
-import Botones from "./Cmponentes/Botones";
 import Tablero from "./Cmponentes/Tablero";
 
 function App() {
+  
+
+  
   return (
     <>
       <h1>Battleship</h1>
@@ -10,9 +12,6 @@ function App() {
         <Tablero />
         <Tablero />
       </div>
-      {/* <div>
-        <Botones />
-      </div> */}
       
     </>
   );

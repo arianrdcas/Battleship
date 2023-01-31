@@ -7,30 +7,39 @@ h1 {
 
 .contendor-tableros {
   width: 1061px;
-  height: 550px;
-  display: flex;
+  height: 400px;
+  display:flex;
+  
 }
 .tablero {
-  height: 300px;
-  width: 410px;
-  margin: auto;
+  height: 320px;
+  width: 320px;
   background: aqua;
   display: flex;
   flex-direction: row;
 }
 
-
-.casilla {
+.elemento {
   width: 30px;
   height: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
   background: aqua;
   border: 1px solid black;
+  color: aqua;
 }
 
+.elemento2 {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  border: 1px solid black;
+  color: aqua;
+}
 
 .botones {
   display: flex;
@@ -51,4 +60,24 @@ h1 {
 .btn:hover,
 .btn:focus {
   background-color: hsl(30, 100%, 40%);
+}
+
+
+.tablero5{
+  height: 300px;
+  width: 410px;
+  background: aqua;
+  display: flex;
+  flex-direction: row;
+}
+
+.elemento5{
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: red;
+  border: 1px solid black;
+  color: aqua;
 }
